@@ -116,8 +116,7 @@ if (Questions.find().count() === 0) {
     userId: lizzie._id,
     author: lizzie.profile.name,
     submitted: now - 9 * 3600 * 1000,
-    commentsCount: 0,
-    upvoters: [], votes: 0
+    commentsCount: 0
   });
 
   var questionTwoId = Questions.insert({
@@ -128,8 +127,7 @@ if (Questions.find().count() === 0) {
     userId: lizzie._id,
     author: lizzie.profile.name,
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 0,
-    upvoters: [], votes: 0
+    commentsCount: 0
   });
 
   var questionTwoId = Questions.insert({
@@ -140,8 +138,7 @@ if (Questions.find().count() === 0) {
     userId: lizzie._id,
     author: lizzie.profile.name,
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 0,
-    upvoters: [], votes: 0
+    commentsCount: 0
   });
 
     var questionTwoId = Questions.insert({
@@ -152,8 +149,7 @@ if (Questions.find().count() === 0) {
     userId: lizzie._id,
     author: lizzie.profile.name,
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 0,
-    upvoters: [], votes: 0
+    commentsCount: 0
   });
 
 }

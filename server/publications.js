@@ -24,7 +24,7 @@ Meteor.publish('singleEntry', function(id) {
 
 
 Meteor.publish('questions', function(limit) {
-  return Questions.find({}, {sort: {submitted: -1}, limit: limit});
+  return Questions.find({}, {sort: {questionNumber: -1}, limit: limit});
 });
 
 Meteor.publish('newQuestions', function(limit) {
