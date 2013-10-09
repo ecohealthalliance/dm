@@ -156,6 +156,4 @@ if (Questions.find().count() === 0) {
     upvoters: [], votes: 0
   });
 
-
-
 }

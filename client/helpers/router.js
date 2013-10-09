@@ -13,7 +13,6 @@ Meteor.Router.add({
   },
   
   '/questions': {to: 'newQuestions', as: 'home'},
-
   '/newq': 'newQuestions', 
 
   '/questions/:_id': {

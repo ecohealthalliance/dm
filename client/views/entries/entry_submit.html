@@ -1,13 +1,13 @@
 <template name="entrySubmit">
 
-<h2> Survey info </h2>
-{{> fields_divs}}
+	<h2> Survey info </h2>
+	{{> fields_divs}}
 
-<h2> Survey responses </h2>
+	<h2> Survey responses </h2>
 
-{{#each questions}}
-{{> entryqItem}}
-{{/each}}
+	{{#each questions}}
+		{{> entryqItem}}
+	{{/each}}
 
     <div class="control-group">
         <div class="controls">
