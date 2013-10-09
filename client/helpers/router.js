@@ -1,6 +1,5 @@
 Meteor.Router.add({
   '/': {to: 'newEntries', as: 'home'},
-  '/best': 'bestEntries',
   '/new': 'newEntries',
   
   '/entries/:_id': {
@@ -13,7 +12,23 @@ Meteor.Router.add({
     and: function(id) { Session.set('currentEntryId', id); }    
   },
   
-  '/submit': 'entrySubmit'
+  '/questions': {to: 'newQuestions', as: 'home'},
+
+  '/newq': 'newQuestions', 
+
+  '/questions/:_id': {
+    to: 'questionPage', 
+    and: function(id) { Session.set('currentQuestionId', id); }
+  }, 
+
+  '/questions/:_id/edit': {
+    to: 'questionEdit', 
+    and: function(id) { Session.set('currentQuestionId', id); }    
+  },
+
+  '/submit': 'entrySubmit',
+
+  '/submitq': 'questionSubmit'
 });
 
 Meteor.Router.filters({

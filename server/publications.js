@@ -21,3 +21,12 @@ Meteor.publish('newEntries', function(limit) {
 Meteor.publish('singleEntry', function(id) {
   return id && Entries.find(id);
 });
+
+
+Meteor.publish('questions', function(limit) {
+  return Questions.find({}, {sort: {submitted: -1}, limit: limit});
+});
+
+Meteor.publish('newQuestions', function(limit) {
+  return Questions.find({}, {sort: {submitted: -1}, limit: limit});
+});

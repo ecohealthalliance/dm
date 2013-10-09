@@ -1,0 +1,24 @@
+<template name="question_divs">
+    <div class="control-group">
+        <label class="control-label" for="questionNumber">Question Number</label>
+        <div class="controls">
+            <input name="questionNumber" type="text" value="" placeholder="Unique number for question"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="question">Question</label>
+        <div class="controls">
+            <textarea name="question" type="text" value="" placeholder="Question"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="questionType">Question Type</label>
+        <div class="controls">
+            {{> type_drop}}
+        </div>
+    </div>
+
+</template>
+

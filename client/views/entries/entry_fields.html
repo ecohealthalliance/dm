@@ -1,0 +1,47 @@
+<template name="fields_divs">
+
+    <div class="control-group">
+        <label class="control-label" for="qid">Questionnaire identification number</label>
+        <div class="controls">
+            <input name="qid" type="text" value="" placeholder="Questionnaire ID"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="district">District name</label>
+        <div class="controls">
+            <input name="district" type="text" value="" placeholder="District name"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="village">Village name</label>
+        <div class="controls">
+            <input name="village" type="text" value="" placeholder="Name of village"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="date">Date</label>
+        <div class="controls">
+            <input name="date" type="text" value="" placeholder="Date of survey"/>
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <label class="control-label" for="intName">Name of Interviewer</label>
+        <div class="controls">
+            {{> interviewer_drop}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="supName">Name of Supervisor</label>
+        <div class="controls">
+            {{> supervisor_drop}}
+        </div>
+    </div>
+
+</template>
+

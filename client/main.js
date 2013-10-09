@@ -1,5 +1,6 @@
 newEntriesHandle = Meteor.subscribeWithPagination('newEntries', 3);
-topEntriesHandle = Meteor.subscribeWithPagination('topEntries', 3);
+newQuestionsHandle = Meteor.subscribeWithPagination('newQuestions', 3);
+
 
 /*entriesHandle = Meteor.subscribeWithPagination('newEntries', 3);*/
 Meteor.autorun(function() {
@@ -8,3 +9,5 @@ Meteor.autorun(function() {
 })
 
 Meteor.subscribe('notifications');
+
+Meteor.subscribe('questions');

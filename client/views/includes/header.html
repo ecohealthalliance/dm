@@ -1,17 +1,22 @@
 <template name="header">
   <header class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="/">Sicki</a>
+      <a class="brand" href="/">Datamater</a>
       <ul class="nav">
         <li class="{{activeRouteClass 'home' 'newEntries'}}">
-          <a href="{{homePath}}">New</a>
-        </li>
-        <li class="{{activeRouteClass  'bestEntries'}}">
-          <a href="{{bestEntriesPath}}">Best</a>
+          <a href="{{homePath}}">Entries</a>
         </li>
         {{#if currentUser}}
           <li class="{{activeRouteClass 'entrySubmit'}}">
             <a href="/submit">Submit Entry</a>
+          </li>
+        {{/if}}
+        <li class="{{activeRouteClass 'newQuestions'}}">
+          <a href="/newq">Questions</a>
+        </li>
+        {{#if currentUser}}
+          <li class="{{activeRouteClass 'questionSubmit'}}">
+            <a href="/submitq">Submit Question</a>
           </li>
         {{/if}}
         <li class="dropdown">

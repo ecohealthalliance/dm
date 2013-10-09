@@ -8,32 +8,32 @@ Entries.allow({
 Entries.deny({
   update: function(userId, entry, fieldNames) {
     // may only edit the following three fields:
-    return (_.without(fieldNames, 'eventName', 'disease', 'zoonoticType').length > 0);
+    return (_.without(fieldNames, 'qid', 'district', 'village').length > 0);
   }
 });
 
 Meteor.methods({
   entry: function(entryAttributes) {
     var user = Meteor.user(),
-      entryWithSameEventName = Entries.findOne({eventName: entryAttributes.eventName});
+      entryWithSameQID = Entries.findOne({qid: entryAttributes.qid});
 
     // ensure the user is logged in
     if (!user)
       throw new Meteor.Error(401, "You need to login to add new entries");
 
-    // ensure the entry has a title
-    if (!entryAttributes.eventName)
-      throw new Meteor.Error(422, 'Please fill in an event name');
+    // ensure the entry has a number
+    if (!entryAttributes.qid)
+      throw new Meteor.Error(422, 'Please fill in an event number');
 
     // check that there are no previous entries with the same last name
-    if (entryAttributes.eventName && entryWithSameEventName) {
+    if (entryAttributes.qid && entryWithSameQID) {
       throw new Meteor.Error(302, 
         'This event name has already been entered', 
-        entryWithSameEventName._id);
+        entryWithSameQID._id);
     }
 
     // pick out the whitelisted keys
-    var entry = _.extend(_.pick(entryAttributes, 'eventName', 'disease', 'zoonoticType'), {
+    var entry = _.extend(_.pick(entryAttributes, 'qid', 'district', 'village'), {
       userId: user._id, 
       author: user.username, 
       submitted: new Date().getTime(),

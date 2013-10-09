@@ -29,17 +29,16 @@ if (Entries.find().count() === 0) {
   var elizabeth = Meteor.users.findOne(elizabethId);
 
   var surveyOneId = Entries.insert({
-    eventName: 'Acinetobacter baumannii gentamycin-res (Australia, 1993)',
-    refEventName: 'Jones et al. SI',
-    disease: 'none reported, but likely nosocomial',
-    refDisease: '75',
-    zoonoticType: 'non-zoonotic',
-    refZoonoticType: '459',
+    qid: '123',
+    district: 'Rio',
+    village: 'Solola',
+    date: '2013',
+    nameint: 'bob',
+    namesup: 'billy bob',
     userId: carla._id,
     author: carla.profile.name,
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 2,
-    upvoters: [], votes: 0
+    commentsCount: 2
   });
 
 
@@ -48,7 +47,7 @@ if (Entries.find().count() === 0) {
     userId: nico._id,
     author: nico.profile.name,
     submitted: now - 3 * 3600 * 1000,
-    body: 'Carla: are we sure this is nosocomial'
+    body: 'Carla: are we sure this is the right survey'
   });
 
   Comments.insert({
@@ -56,16 +55,16 @@ if (Entries.find().count() === 0) {
     userId: carla._id,
     author: carla.profile.name,
     submitted: now - 5 * 3600 * 1000,
-    body: 'Nico: Australia 1993 reports nosocomial infection, not specified but likely septicaemia, endocarditis, meningitis, pneumonia, skin and wound sepsis (or) urinary tract infection'
+    body: 'Nico: yes I checked the paper copy'
   });
 
   Entries.insert({
-    eventName: 'Bartonella elizabethae (Massachusetts, 1986)',
-    refEventName: 'Jones et al. SI',
-    disease: 'Endocarditis ',
-    refDisease: '149 ',
-    zoonoticType: 'zoonotic-wildlife',
-    refZoonoticType: '459',
+    qid: '456',
+    district: 'Solola',
+    village: 'Rio',
+    date: '2012',
+    nameint: 'bob',
+    namesup: 'billy bob',
     userId: alexa._id,
     author: alexa.profile.name,
     submitted: now - 10 * 3600 * 1000,
@@ -74,12 +73,12 @@ if (Entries.find().count() === 0) {
   });
 
   Entries.insert({
-    eventName: 'Chikungunya virus (West Kalimantan/Sumatra/Java Indonesia, 1982)',
-    refEventName: 'Jones et al. SI',
-    disease: 'Chikungunya fever',
-    refDisease: '238, 336, 360, 609',
-    zoonoticType: 'zoonotic-wildlife',
-    refZoonoticType: '360',
+    qid: '123',
+    district: 'Riola',
+    village: 'Sio',
+    date: '2013',
+    nameint: 'bob',
+    namesup: 'billy bob',
     userId: alex._id,
     author: alex.profile.name,
     submitted: now - 12 * 3600 * 1000,
@@ -97,6 +96,36 @@ if (Entries.find().count() === 0) {
     userId: elizabeth._id,
     author: elizabeth.profile.name,
     submitted: now - 12 * 3600 * 1000,
+    commentsCount: 0,
+    upvoters: [], votes: 0
+  });
+}
+
+if (Questions.find().count() === 0) {
+  var carlaId = Meteor.users.insert({
+    profile: { name: 'ctilchin' }
+  });
+  
+  var carla = Meteor.users.findOne(carlaId);
+
+  var questionOneId = Questions.insert({
+    questionNumber: '123',
+    question: 'Who did you survey',
+    questionType: 'text',
+    userId: carla._id,
+    author: carla.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0,
+    upvoters: [], votes: 0
+  });
+
+  var questionTwoId = Questions.insert({
+    questionNumber: '456',
+    question: 'Where did they live',
+    questionType: 'text',
+    userId: carla._id,
+    author: carla.profile.name,
+    submitted: now - 7 * 3600 * 1000,
     commentsCount: 0,
     upvoters: [], votes: 0
   });

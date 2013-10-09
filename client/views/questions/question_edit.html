@@ -1,0 +1,20 @@
+<template name="questionEdit">
+  {{#with question}}
+    <form class="main">
+      {{> question_divs}}
+
+      <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-primary submit"/>
+        </div>
+      </div>
+
+      <hr/>
+      <div class="control-group">
+          <div class="controls">
+              <a class="btn btn-danger delete" href="#">Delete post</a>
+          </div>
+      </div>
+    </form>
+  {{/with}}
+</template>
