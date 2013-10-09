@@ -1,16 +1,12 @@
 <template name="entrySubmit">
 
-  <form class="main">
-    <div class="control-group">
-        <label class="control-label" for="qid">Questionnaire identification number</label>
-        <div class="controls">
-            <input name="qid" type="text" value="" placeholder="Questionnaire ID"/>
-        </div>
-    </div>
+<h2> Survey info </h2>
+{{> fields_divs}}
+
+<h2> Survey responses </h2>
 
 {{#each questions}}
 {{> entryqItem}}
-
 {{/each}}
 
     <div class="control-group">
