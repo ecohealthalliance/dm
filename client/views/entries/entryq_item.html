@@ -5,7 +5,12 @@
 			<p>({{questionNumber}}) {{question}}</p>
 		</label>
         <div class="controls">
+        	{{#if isTextArea}}
+            <textarea name="{{questionNumber}}" type="text" value="" placeholder="{{questionTitle}}"/>
+            {{else}}
             <input name="{{questionNumber}}" type="text" value="" placeholder="{{questionTitle}}"/>
+            {{/if}}
         </div>
     </div>
+
 </template>
