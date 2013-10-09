@@ -1,11 +1,11 @@
 <template name="questionItem">
-  <div class="question">
-    <div class="question-content">
-      <h3><a href="{{questionPagePath this}}">{{questionName}}</a><span>{{disease}}</span></h3>
+  <div class="entry">
+    <div class="entry-content">
+      <h3><a href="{{questionPagePath this}}">{{questionNumber}}</a><span>{{questionTitle}}</span></h3>
       <p>
-        Zoonotic Type: {{zoonoticType}},
+        Type: {{questionType}},
+        Question: {{question}},
         Submitted by {{author}},
-        {{pluralize votes "Vote"}},
         <a href="{{questionPagePath this}}">{{pluralize commentsCount "comment"}}</a>
       </p>
     </div>

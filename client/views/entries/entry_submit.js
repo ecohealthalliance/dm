@@ -2,12 +2,9 @@ Template.entrySubmit.events({
   'submit form': function(event) {
     event.preventDefault();
     var entry = {
-      eventName: $(event.target).find('[name=eventName]').val(),
-      refEventName: $(event.target).find('[name=refEventName]').val(),
-      disease: $(event.target).find('[name=disease]').val(),
-      refDisease: $(event.target).find('[name=refDisease]').val(),
-      zoonoticType: $(event.target).find('[name=zoonoticType]').val(),
-      refZoonoticType: $(event.target).find('[name=refZoonoticType]').val()
+      qid: $(event.target).find('[name=qid]').val(),
+      district: $(event.target).find('[name=district]').val(),
+      village: $(event.target).find('[name=village]').val()
     }
     Meteor.call('entry', entry, function(error, id) {
       if (error) {
@@ -20,5 +17,11 @@ Template.entrySubmit.events({
         Meteor.Router.to('entryPage', id);
       }
     });
+  }
+});
+
+Template.entrySubmit.helpers({
+  questions: function() {
+    return Questions.find();
   }
 });

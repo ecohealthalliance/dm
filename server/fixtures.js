@@ -8,25 +8,25 @@ if (Entries.find().count() === 0) {
   });
   var nico = Meteor.users.findOne(nicoId);
 
-  var carlaId = Meteor.users.insert({
-    profile: { name: 'ctilchin' }
+  var lizzieId = Meteor.users.insert({
+    profile: { name: 'lloh' }
   });
-  var carla = Meteor.users.findOne(carlaId);
+  var lizzie = Meteor.users.findOne(lizzieId);
 
-  var alexaId = Meteor.users.insert({
-    profile: { name: 'afrank' }
+  var carlosId = Meteor.users.insert({
+    profile: { name: 'czambrana' }
   });
-  var alexa = Meteor.users.findOne(alexaId);
+  var carlos = Meteor.users.findOne(carlosId);
 
-  var alexId = Meteor.users.insert({
-    profile: { name: 'ademarsh' }
+  var sarahId = Meteor.users.insert({
+    profile: { name: 'selwood' }
   });
-  var alex = Meteor.users.findOne(alexId);
+  var sarah = Meteor.users.findOne(sarahId);
 
-  var elizabethId = Meteor.users.insert({
-    profile: { name: 'eeckel' }
+  var krisId = Meteor.users.insert({
+    profile: { name: 'kmurray' }
   });
-  var elizabeth = Meteor.users.findOne(elizabethId);
+  var kris = Meteor.users.findOne(krisId);
 
   var surveyOneId = Entries.insert({
     qid: '123',
@@ -35,8 +35,8 @@ if (Entries.find().count() === 0) {
     date: '2013',
     nameint: 'bob',
     namesup: 'billy bob',
-    userId: carla._id,
-    author: carla.profile.name,
+    userId: lizzie._id,
+    author: lizzie.profile.name,
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2
   });
@@ -47,13 +47,13 @@ if (Entries.find().count() === 0) {
     userId: nico._id,
     author: nico.profile.name,
     submitted: now - 3 * 3600 * 1000,
-    body: 'Carla: are we sure this is the right survey'
+    body: 'Lizzie: are we sure this is the right survey'
   });
 
   Comments.insert({
     entryId: surveyOneId,
-    userId: carla._id,
-    author: carla.profile.name,
+    userId: lizzie._id,
+    author: lizzie.profile.name,
     submitted: now - 5 * 3600 * 1000,
     body: 'Nico: yes I checked the paper copy'
   });
@@ -65,8 +65,8 @@ if (Entries.find().count() === 0) {
     date: '2012',
     nameint: 'bob',
     namesup: 'billy bob',
-    userId: alexa._id,
-    author: alexa.profile.name,
+    userId: carlos._id,
+    author: carlos.profile.name,
     submitted: now - 10 * 3600 * 1000,
     commentsCount: 0,
     upvoters: [], votes: 0
@@ -79,8 +79,8 @@ if (Entries.find().count() === 0) {
     date: '2013',
     nameint: 'bob',
     namesup: 'billy bob',
-    userId: alex._id,
-    author: alex.profile.name,
+    userId: sarah._id,
+    author: sarah.profile.name,
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 0,
     upvoters: [], votes: 0
@@ -93,8 +93,8 @@ if (Entries.find().count() === 0) {
     refDisease: '8',
     zoonoticType: 'zoonotic-unkown',
     refZoonoticType: '738',
-    userId: elizabeth._id,
-    author: elizabeth.profile.name,
+    userId: kris._id,
+    author: kris.profile.name,
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 0,
     upvoters: [], votes: 0
@@ -102,32 +102,60 @@ if (Entries.find().count() === 0) {
 }
 
 if (Questions.find().count() === 0) {
-  var carlaId = Meteor.users.insert({
-    profile: { name: 'ctilchin' }
+  var lizzieId = Meteor.users.insert({
+    profile: { name: 'lloh' }
   });
   
-  var carla = Meteor.users.findOne(carlaId);
+  var lizzie = Meteor.users.findOne(lizzieId);
 
   var questionOneId = Questions.insert({
-    questionNumber: '123',
-    question: 'Who did you survey',
-    questionType: 'text',
-    userId: carla._id,
-    author: carla.profile.name,
+    questionNumber: '8',
+    questionTitle: 'Sample type',
+    question: 'Sample type',
+    questionType: 'dropdown',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
     submitted: now - 9 * 3600 * 1000,
     commentsCount: 0,
     upvoters: [], votes: 0
   });
 
   var questionTwoId = Questions.insert({
-    questionNumber: '456',
-    question: 'Where did they live',
-    questionType: 'text',
-    userId: carla._id,
-    author: carla.profile.name,
+    questionNumber: '9',
+    questionTitle: 'Household number',
+    question: 'Household number',
+    questionType: 'number',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 0,
     upvoters: [], votes: 0
   });
+
+  var questionTwoId = Questions.insert({
+    questionNumber: '10',
+    questionTitle: 'Do people live in household',
+    question: 'Do people from study group live in household?',
+    questionType: 'boolean',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 7 * 3600 * 1000,
+    commentsCount: 0,
+    upvoters: [], votes: 0
+  });
+
+    var questionTwoId = Questions.insert({
+    questionNumber: '11',
+    questionTitle: 'How many people in household',
+    question: 'How many people from study group live in household?',
+    questionType: 'number',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 7 * 3600 * 1000,
+    commentsCount: 0,
+    upvoters: [], votes: 0
+  });
+
+
 
 }
