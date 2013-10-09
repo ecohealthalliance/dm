@@ -2,6 +2,7 @@ Template.entrySubmit.events({
   'submit form': function(event) {
     event.preventDefault();
     var entry = {
+      /* change this into a loop on questions collection */
       qid: $(event.target).find('[name=qid]').val(),
       district: $(event.target).find('[name=district]').val(),
       village: $(event.target).find('[name=village]').val()
