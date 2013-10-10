@@ -109,7 +109,7 @@ if (Questions.find().count() === 0) {
   var lizzie = Meteor.users.findOne(lizzieId);
 
   var questionOneId = Questions.insert({
-    questionNumber: '8',
+    questionNumber: 8,
     questionTitle: 'Sample type',
     question: 'Sample type',
     questionType: 'textarea',
@@ -120,7 +120,7 @@ if (Questions.find().count() === 0) {
   });
 
   var questionTwoId = Questions.insert({
-    questionNumber: '9',
+    questionNumber: 9,
     questionTitle: 'Household number',
     question: 'Household number',
     questionType: 'text',
@@ -131,7 +131,7 @@ if (Questions.find().count() === 0) {
   });
 
   var questionTwoId = Questions.insert({
-    questionNumber: '10',
+    questionNumber: 10,
     questionTitle: 'Do people live in household',
     question: 'Do people from study group live in household?',
     questionType: 'dropdown',
@@ -143,7 +143,7 @@ if (Questions.find().count() === 0) {
   });
 
     var questionTwoId = Questions.insert({
-    questionNumber: '11',
+    questionNumber: 11,
     questionTitle: 'How many people in household',
     question: 'How many people from study group live in household?',
     questionType: 'text',

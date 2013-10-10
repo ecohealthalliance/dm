@@ -24,9 +24,10 @@ Meteor.publish('singleEntry', function(id) {
 
 
 Meteor.publish('questions', function(limit) {
-  return Questions.find({}, {sort: {questionNumber: -1}, limit: limit});
+  return Questions.find({}, {sort: {questionNumber: 1}, limit: limit});
 });
 
+/* fix this in entry */
 Meteor.publish('newQuestions', function(limit) {
-  return Questions.find({}, {sort: {submitted: -1}, limit: limit});
+  return Questions.find({}, {sort: {questionNumber: 1}, limit: limit});
 });

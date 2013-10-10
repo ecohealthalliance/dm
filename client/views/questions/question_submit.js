@@ -2,7 +2,7 @@ Template.questionSubmit.events({
   'submit form': function(event) {
     event.preventDefault();
     var question = {
-      questionNumber: $(event.target).find('[name=questionNumber]').val(),
+      questionNumber: parseInt($(event.target).find('[name=questionNumber]').val(),10),
       questionTitle: $(event.target).find('[name=questionTitle]').val(),
       question: $(event.target).find('[name=question]').val(),
       questionType: $(event.target).find('[name=questionType]').val(),
