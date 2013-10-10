@@ -1,7 +1,9 @@
 <template name="entryEdit">
   {{#with entry}}
     <form class="main">
-      {{> fields_divs}}
+      {{#each questions}}
+        {{> entryqItem}}
+      {{/each}}
 
       <div class="control-group">
         <div class="controls">
