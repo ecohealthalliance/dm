@@ -27,7 +27,9 @@ Meteor.Router.add({
 
   '/submit': 'entrySubmit',
 
-  '/submitq': 'questionSubmit'
+  '/submitq': 'questionSubmit',
+
+  '/about': 'aboutPage'
 });
 
 Meteor.Router.filters({

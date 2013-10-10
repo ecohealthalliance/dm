@@ -3,25 +3,35 @@
     <div class="navbar-inner">
       <a class="brand" href="/">DataMator (DM)</a>
       <ul class="nav">
+
         <li class="{{activeRouteClass 'home' 'newEntries'}}">
           <a href="{{homePath}}">Entries</a>
         </li>
+
         {{#if currentUser}}
           <li class="{{activeRouteClass 'entrySubmit'}}">
             <a href="/submit">Submit Entry</a>
           </li>
         {{/if}}
+        
         <li class="{{activeRouteClass 'newQuestions'}}">
           <a href="/questions">Questions</a>
         </li>
+
         {{#if currentUser}}
           <li class="{{activeRouteClass 'questionSubmit'}}">
             <a href="/submitq">Submit Question</a>
           </li>
         {{/if}}
+
+        <li class="{{activeRouteClass 'aboutPage'}}">
+          <a href="/about">About</a>
+        </li>
+
         <li class="dropdown">
           {{> notifications}}
         </li>
+        
       </ul>
       <ul class="nav pull-right">
         <li>{{loginButtons}}</li>
