@@ -1,4 +1,5 @@
 Template.entryqItem.helpers({
+  /* These helpers determine type for input */
   isText: function() {
     return this.questionType == 'text';
   },
