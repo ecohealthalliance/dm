@@ -109,6 +109,75 @@ if (Questions.find().count() === 0) {
   var lizzie = Meteor.users.findOne(lizzieId);
 
   var questionOneId = Questions.insert({
+    questionNumber: 1,
+    questionTitle: 'QID',
+    question: 'Questionnaire identification number',
+    questionType: 'number',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0
+  });
+
+    var questionOneId = Questions.insert({
+    questionNumber: 2,
+    questionTitle: 'District',
+    question: 'District name',
+    questionType: 'dropdown',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0
+  });
+
+  var questionOneId = Questions.insert({
+    questionNumber: 3,
+    questionTitle: 'Village',
+    question: 'Village name',
+    questionType: 'dropdown',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0
+  });
+
+/* convert this to datetime */
+  var questionOneId = Questions.insert({
+    questionNumber: 4,
+    questionTitle: 'Date',
+    question: 'Date of survey',
+    questionType: 'text',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0
+  });
+
+  var questionOneId = Questions.insert({
+    questionNumber: 5,
+    questionTitle: 'Interviewer',
+    question: 'What was interviewer name',
+    questionType: 'dropdown',
+    questionDrop: '{"bill":"Bill", "jane":"Jane"}',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0
+  });
+
+  var questionOneId = Questions.insert({
+    questionNumber: 6,
+    questionTitle: 'Supervisor',
+    question: 'What was supervisor name',
+    questionType: 'dropdown',
+    questionDrop: '{"bob":"Bob", "sue":"Sue"}',
+    userId: lizzie._id,
+    author: lizzie.profile.name,
+    submitted: now - 9 * 3600 * 1000,
+    commentsCount: 0
+  });
+
+  var questionOneId = Questions.insert({
     questionNumber: 8,
     questionTitle: 'Sample type',
     question: 'Sample type',
