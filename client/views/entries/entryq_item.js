@@ -5,6 +5,9 @@ Template.entryqItem.helpers({
   },
   isTextArea: function() {
     return this.questionType == 'textarea';
+  },
+  isDrop: function() {
+    return this.questionType == 'dropdown';
   }
 });
 

@@ -5,7 +5,8 @@ Template.questionSubmit.events({
       questionNumber: $(event.target).find('[name=questionNumber]').val(),
       questionTitle: $(event.target).find('[name=questionTitle]').val(),
       question: $(event.target).find('[name=question]').val(),
-      questionType: $(event.target).find('[name=questionType]').val()
+      questionType: $(event.target).find('[name=questionType]').val(),
+      questionDrop: $(event.target).find('[name=questionDrop]').val()
     }
     Meteor.call('question', question, function(error, id) {
       if (error) {

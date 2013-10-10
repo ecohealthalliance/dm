@@ -5,12 +5,24 @@
 			<p>({{questionNumber}}) {{question}}</p>
 		</label>
         <div class="controls">
+            <!--move this handlebars control to helper -->
         	{{#if isTextArea}}
             <textarea name="{{questionNumber}}" type="text" value="" placeholder="{{questionTitle}}"/>
             {{else}}
-            <input name="{{questionNumber}}" type="text" value="" placeholder="{{questionTitle}}"/>
+                {{#if isDrop}}
+                    <select name="{{questionNumber}}">
+                        <option value="">--</option>
+                        {{#each arrayify questionDrop}}                            
+                            <option value="{{name}}">{{value}}</option>
+                        {{/each}}
+                    </select>
+                
+                {{else}}
+                    <input name="{{questionNumber}}" type="text" value="" placeholder="{{questionTitle}}"/>
+                {{/if}}
             {{/if}}
         </div>
     </div>
 
 </template>
+
