@@ -29,7 +29,7 @@ if (Entries.find().count() === 0) {
   var kris = Meteor.users.findOne(krisId);
 
   var surveyOneId = Entries.insert({
-    qid: '123',
+    qid: 123,
     district: 'Rio',
     village: 'Solola',
     date: '2013',
@@ -59,7 +59,7 @@ if (Entries.find().count() === 0) {
   });
 
   Entries.insert({
-    qid: '456',
+    qid: 456,
     district: 'Solola',
     village: 'Rio',
     date: '2012',
@@ -73,7 +73,7 @@ if (Entries.find().count() === 0) {
   });
 
   Entries.insert({
-    qid: '123',
+    qid: 789,
     district: 'Riola',
     village: 'Sio',
     date: '2013',

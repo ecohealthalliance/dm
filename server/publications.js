@@ -1,5 +1,5 @@
 Meteor.publish('entries', function(limit) {
-  return Entries.find({}, {limit: limit});
+  return Entries.find({}, {sort: {qid: -1}, limit: limit});
 });
 
 Meteor.publish('topEntries', function(limit) {

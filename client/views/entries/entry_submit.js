@@ -3,7 +3,7 @@ Template.entrySubmit.events({
     event.preventDefault();
     var entry = {
       /* change this into a loop on questions collection */
-      qid: $(event.target).find('[name=qid]').val(),
+      qid: parseInt($(event.target).find('[name=qid]').val(),10),
       district: $(event.target).find('[name=district]').val(),
       village: $(event.target).find('[name=village]').val()
     }

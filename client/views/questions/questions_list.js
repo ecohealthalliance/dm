@@ -9,7 +9,7 @@ Template.newQuestions.helpers({
 
 Template.questionsList.helpers({
   questions: function() {
-    return Questions.find({}, {sort: this.sort, limit: this.handle.limit()});
+    return Questions.find({}, {limit: this.handle.limit()});
   },
 
   questionsReady: function() {
