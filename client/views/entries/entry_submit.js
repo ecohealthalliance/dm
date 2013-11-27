@@ -1,6 +1,7 @@
 Template.entrySubmit.events({
   'submit form': function(event) {
     event.preventDefault();
+    /*turn this into a loop*/
     var entry = {
       qid: parseInt($(event.target).find('[name=qid]').val(),10),
       district: $(event.target).find('[name=district]').val(),

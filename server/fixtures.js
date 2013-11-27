@@ -110,8 +110,8 @@ if (Questions.find().count() === 0) {
 
   var questionOneId = Questions.insert({
     questionNumber: 1,
-    questionTitle: 'QID',
-    question: 'Questionnaire identification number',
+    questionTitle: 'qid',
+    question: 'Questionnaire IDentification number (QID)',
     questionType: 'number',
     userId: lizzie._id,
     author: lizzie.profile.name,
@@ -121,9 +121,10 @@ if (Questions.find().count() === 0) {
 
     var questionOneId = Questions.insert({
     questionNumber: 2,
-    questionTitle: 'District',
+    questionTitle: 'district',
     question: 'District name',
     questionType: 'dropdown',
+    questionDrop: '{"solola":"Solola", "peten":"Peten"}',
     userId: lizzie._id,
     author: lizzie.profile.name,
     submitted: now - 9 * 3600 * 1000,
@@ -132,9 +133,10 @@ if (Questions.find().count() === 0) {
 
   var questionOneId = Questions.insert({
     questionNumber: 3,
-    questionTitle: 'Village',
+    questionTitle: 'village',
     question: 'Village name',
     questionType: 'dropdown',
+    questionDrop: '{"jucanya":"Jucanya", "quetzaltenango":"Quetzaltenango"}',
     userId: lizzie._id,
     author: lizzie.profile.name,
     submitted: now - 9 * 3600 * 1000,
@@ -144,7 +146,7 @@ if (Questions.find().count() === 0) {
 /* convert this to datetime */
   var questionOneId = Questions.insert({
     questionNumber: 4,
-    questionTitle: 'Date',
+    questionTitle: 'date',
     question: 'Date of survey',
     questionType: 'text',
     userId: lizzie._id,
@@ -155,7 +157,7 @@ if (Questions.find().count() === 0) {
 
   var questionOneId = Questions.insert({
     questionNumber: 5,
-    questionTitle: 'Interviewer',
+    questionTitle: 'interviewer',
     question: 'What was interviewer name',
     questionType: 'dropdown',
     questionDrop: '{"bill":"Bill", "jane":"Jane"}',
@@ -167,7 +169,7 @@ if (Questions.find().count() === 0) {
 
   var questionOneId = Questions.insert({
     questionNumber: 6,
-    questionTitle: 'Supervisor',
+    questionTitle: 'supervisor',
     question: 'What was supervisor name',
     questionType: 'dropdown',
     questionDrop: '{"bob":"Bob", "sue":"Sue"}',
@@ -179,7 +181,7 @@ if (Questions.find().count() === 0) {
 
   var questionOneId = Questions.insert({
     questionNumber: 8,
-    questionTitle: 'Sample type',
+    questionTitle: 'sampleType',
     question: 'Sample type',
     questionType: 'textarea',
     userId: lizzie._id,
@@ -190,7 +192,7 @@ if (Questions.find().count() === 0) {
 
   var questionTwoId = Questions.insert({
     questionNumber: 9,
-    questionTitle: 'Household number',
+    questionTitle: 'householdNumber',
     question: 'Household number',
     questionType: 'text',
     userId: lizzie._id,
@@ -201,7 +203,7 @@ if (Questions.find().count() === 0) {
 
   var questionTwoId = Questions.insert({
     questionNumber: 10,
-    questionTitle: 'Do people live in household',
+    questionTitle: 'peopleInHousehold',
     question: 'Do people from study group live in household?',
     questionType: 'dropdown',
     questionDrop: '{"yes":"Yes", "no":"No"}',
@@ -213,7 +215,7 @@ if (Questions.find().count() === 0) {
 
     var questionTwoId = Questions.insert({
     questionNumber: 11,
-    questionTitle: 'How many people in household',
+    questionTitle: 'numInHousehold',
     question: 'How many people from study group live in household?',
     questionType: 'text',
     userId: lizzie._id,
