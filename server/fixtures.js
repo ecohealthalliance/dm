@@ -87,12 +87,12 @@ if (Entries.find().count() === 0) {
   });
 
   Entries.insert({
-    eventName: 'Ebola virus (Sudan, 1976)',
-    refEventName: 'Jones et al. SI',
-    disease: 'Haemorrhagic fever',
-    refDisease: '8',
-    zoonoticType: 'zoonotic-unkown',
-    refZoonoticType: '738',
+    qid: 999,
+    district: 'Marlow',
+    village: 'Landia',
+    date: '2013',
+    nameint: 'bob',
+    namesup: 'billy bob',
     userId: kris._id,
     author: kris.profile.name,
     submitted: now - 12 * 3600 * 1000,

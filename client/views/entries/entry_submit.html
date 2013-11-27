@@ -1,11 +1,12 @@
 <template name="entrySubmit">
+  <form class="main">
 
-<!-- iterates through all questions from collection -->
-	<h2> Survey responses </h2>
+  <h2> Survey responses </h2>
 
-	{{#each questions}}
-		{{> entryqItem}}
-	{{/each}}
+    <!-- iterates through all questions from collection -->
+  	{{#each questions}}
+  		{{> entryqItem}}
+  	{{/each}}
 
     <div class="control-group">
         <div class="controls">
