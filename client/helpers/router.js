@@ -1,6 +1,10 @@
 Meteor.Router.add({
-  '/': {to: 'newEntries', as: 'home'},
-  '/new': 'newEntries',
+  '/': {
+    to: 'homePage', 
+    as: 'home'
+  },
+
+  '/entries': 'newEntries',
   
   '/entries/:_id': {
     to: 'entryPage', 
