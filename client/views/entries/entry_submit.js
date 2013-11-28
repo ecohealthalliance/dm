@@ -2,11 +2,13 @@ Template.entrySubmit.events({
   'submit form': function(event) {
     event.preventDefault();
     /*turn this into a loop*/
+
     var entry = {
       qid: parseInt($(event.target).find('[name=qid]').val(),10),
       district: $(event.target).find('[name=district]').val(),
       village: $(event.target).find('[name=village]').val()
     }
+
     Meteor.call('entry', entry, function(error, id) {
       if (error) {
         // display the error to the user
