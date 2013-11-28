@@ -10,6 +10,10 @@
     </div>
     
     <a href="{{entryPagePath this}}" class="discuss btn">Review</a>
-    {{#if ownEntry}}<a href="{{entryEditPath this}}" class="discuss btn">Edit</a>{{/if}}
+    
+    {{#if ownEntry}}
+      <a href="{{entryEditPath this}}" class="discuss btn">Edit</a>
+    {{/if}}
+    
   </div>
 </template>

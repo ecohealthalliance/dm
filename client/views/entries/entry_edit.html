@@ -1,6 +1,8 @@
 <template name="entryEdit">
   {{#with entry}}
     <form class="main">
+      {{> entry_fields}}
+
       {{#each questions}}
         {{> entryqItem}}
       {{/each}}

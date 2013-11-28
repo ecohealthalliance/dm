@@ -1,22 +1,21 @@
 Template.questionEdit.helpers({
-  entry: function() {
+  question: function() {
     return Questions.findOne(Session.get('currentQuestionId'));
   }
 });
 
 Template.questionEdit.events({
-  'submit form': function(e) {
-    e.preventDefault();
+  'submit form': function(event) {
+    event.preventDefault();
 
     var currentQuestionId = Session.get('currentQuestionId');
 
     var questionProperties = {
-      questionName: $(event.target).find('[name=questionName]').val(),
-      refQuestionName: $(event.target).find('[name=refQuestionName]').val(),
-      disease: $(event.target).find('[name=disease]').val(),
-      refDisease: $(event.target).find('[name=refDisease]').val(),
-      zoonoticType: $(event.target).find('[name=zoonoticType]').val(),
-      refZoonoticType: $(event.target).find('[name=refZoonoticType]').val()
+      questionNumber: parseInt($(event.target).find('[name=questionNumber]').val(),10),
+      questionTitle: $(event.target).find('[name=questionTitle]').val(),
+      question: $(event.target).find('[name=question]').val(),
+      questionType: $(event.target).find('[name=questionType]').val(),
+      questionDrop: $(event.target).find('[name=questionDrop]').val()
     }
 
     Questions.update(currentQuestionId, {$set: questionProperties}, function(error) {
@@ -29,13 +28,19 @@ Template.questionEdit.events({
     });
   },
 
-  'click .delete': function(e) {
-    e.preventDefault();
+  'click .delete': function(event) {
+    event.preventDefault();
 
     if (confirm("Delete this entry?")) {
       var currentQuestionId = Session.get('currentQuestionId');
       Questions.remove(currentQuestionId);
       Meteor.Router.to('questionsList');
     }
+  }
+});
+
+Template.questionSubmit.helpers({
+  questions: function() {
+    return Questions.find();
   }
 });

@@ -16,7 +16,8 @@ Meteor.Router.add({
     and: function(id) { Session.set('currentEntryId', id); }    
   },
   
-  '/questions': {to: 'newQuestions', as: 'home'},
+  '/questions': 'newQuestions',
+
   '/newq': 'newQuestions', 
 
   '/questions/:_id': {

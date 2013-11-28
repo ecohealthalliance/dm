@@ -11,6 +11,10 @@
     </div>
     
     <a href="{{questionPagePath this}}" class="discuss btn">Review</a>
-    {{#if ownQuestion}}<a href="{{questionEditPath this}}" class="discuss btn">Edit</a>{{/if}}
+    
+    {{#if ownQuestion}}
+      <a href="{{questionEditPath this}}" class="discuss btn">Edit</a>
+    {{/if}}
+
   </div>
 </template>

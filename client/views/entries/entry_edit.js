@@ -5,18 +5,15 @@ Template.entryEdit.helpers({
 });
 
 Template.entryEdit.events({
-  'submit form': function(e) {
-    e.preventDefault();
+  'submit form': function(event) {
+    event.preventDefault();
 
     var currentEntryId = Session.get('currentEntryId');
 
     var entryProperties = {
-      eventName: $(event.target).find('[name=eventName]').val(),
-      refEventName: $(event.target).find('[name=refEventName]').val(),
-      disease: $(event.target).find('[name=disease]').val(),
-      refDisease: $(event.target).find('[name=refDisease]').val(),
-      zoonoticType: $(event.target).find('[name=zoonoticType]').val(),
-      refZoonoticType: $(event.target).find('[name=refZoonoticType]').val()
+      qid: parseInt($(event.target).find('[name=qid]').val(),10),
+      district: $(event.target).find('[name=district]').val(),
+      village: $(event.target).find('[name=village]').val()
     }
 
     Entries.update(currentEntryId, {$set: entryProperties}, function(error) {
@@ -29,13 +26,19 @@ Template.entryEdit.events({
     });
   },
 
-  'click .delete': function(e) {
-    e.preventDefault();
+  'click .delete': function(event) {
+    event.preventDefault();
 
     if (confirm("Delete this entry?")) {
       var currentEntryId = Session.get('currentEntryId');
       Entries.remove(currentEntryId);
       Meteor.Router.to('entriesList');
     }
+  }
+});
+
+Template.entrySubmit.helpers({
+  entries: function() {
+    return Entries.find();
   }
 });
