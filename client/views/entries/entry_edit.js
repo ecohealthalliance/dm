@@ -1,6 +1,9 @@
 Template.entryEdit.helpers({
   entry: function() {
     return Entries.findOne(Session.get('currentEntryId'));
+  },
+  questions: function() {
+    return Questions.find();
   }
 });
 
@@ -34,11 +37,5 @@ Template.entryEdit.events({
       Entries.remove(currentEntryId);
       Meteor.Router.to('entriesList');
     }
-  }
-});
-
-Template.entrySubmit.helpers({
-  entries: function() {
-    return Entries.find();
   }
 });

@@ -1,13 +1,17 @@
 <template name="entryqItem">
-
     <div class="control-group">
         <label class="control-label" for="{{questionNumber}}">
 			<p>({{questionNumber}}) {{question}}</p>
 		</label>
+
+       <!-- <div class="controls">
+            <input name="qid" type="text" value="{{qid}}" placeholder="Questionnaire ID"/>
+        </div> -->
+
         <div class="controls">
             <!--move this handlebars control to helper -->
         	{{#if isTextArea}}
-            <textarea name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}"/>
+            <textarea name="{{questionTitle}}" type="text" value="{{questionTitle}}" placeholder="{{questionHelper}}"/>
             {{else}}
                 {{#if isDrop}}
                     <select name="{{questionTitle}}">
@@ -18,7 +22,7 @@
                     </select>
                 
                 {{else}}
-                    <input name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}"/>
+                    <input name="{{questionTitle}}" type="text" value="{{questionTitle}}" placeholder="{{questionHelper}}"/>
                 {{/if}}
             {{/if}}
         </div>
