@@ -2,6 +2,7 @@ Template.entryEdit.helpers({
   entry: function() {
     return Entries.findOne(Session.get('currentEntryId'));
   },
+  /*todo: combine questions and values from entry*/
   questions: function() {
     return Questions.find();
   }

@@ -11,7 +11,7 @@
         <div class="controls">
             <!--move this handlebars control to helper -->
         	{{#if isTextArea}}
-            <textarea name="{{questionTitle}}" type="text" value="{{questionTitle}}" placeholder="{{questionHelper}}"/>
+            <textarea name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}"/>
             {{else}}
                 {{#if isDrop}}
                     <select name="{{questionTitle}}">
@@ -22,7 +22,7 @@
                     </select>
                 
                 {{else}}
-                    <input name="{{questionTitle}}" type="text" value="{{questionTitle}}" placeholder="{{questionHelper}}"/>
+                    <input name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}"/>
                 {{/if}}
             {{/if}}
         </div>
