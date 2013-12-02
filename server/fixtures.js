@@ -111,7 +111,7 @@ if (Questions.find().count() === 0) {
   var questionOneId = Questions.insert({
     questionNumber: 1,
     questionTitle: 'qid',
-    question: 'Questionnaire IDentification number (QID)',
+    question: 'Questionnaire IDentification (QID) number',
     questionHelper: 'Unique number for questionnaire',
     questionType: 'number',
     userId: lizzie._id,
