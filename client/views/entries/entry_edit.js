@@ -5,6 +5,9 @@ Template.entryEdit.helpers({
   /*todo: combine questions and values from entry*/
   questions: function() {
     return Questions.find();
+  },
+  answer: function(questionTitle) {
+    return Entries.findOne(Session.get('currentEntryId'))[questionTitle]
   }
 });
 

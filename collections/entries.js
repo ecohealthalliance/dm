@@ -8,7 +8,9 @@ Entries.allow({
 Entries.deny({
   update: function(userId, entry, fieldNames) {
     // may only edit the following three fields:
-    return (_.without(fieldNames, 'qid', 'district', 'village').length > 0);
+    var questionNames = Questions.find({},{questionTitle:1})
+    return (_.without(fieldNames, _.values(questionNames)).length > 0);
+    /*return (_.without(fieldNames, 'qid', 'district', 'village').length > 0);*/
   }
 });
 
@@ -33,12 +35,12 @@ Meteor.methods({
     }
 
     // pick out the whitelisted keys
-    var entry = _.extend(_.pick(entryAttributes, 'qid', 'district', 'village'), {
-      userId: user._id, 
-      author: user.username, 
+    var entry = _.extend(entryAttributes, {
+      userId: user._id,
+      author: user.username,
       submitted: new Date().getTime(),
       commentsCount: 0,
-      upvoters: [], 
+      upvoters: [],
       votes: 0
     });
 

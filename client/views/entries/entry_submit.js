@@ -1,13 +1,21 @@
 Template.entrySubmit.events({
   'submit form': function(event) {
     event.preventDefault();
+
     /*turn this into a loop*/
 
-    var entry = {
+    var entry = {}
+
+    $(".controls *").each(function(index,element){
+      var name=$(element).attr('name')
+      var value=$(element).val()
+      entry[name]=value
+    })
+
+    /*add parse to jquery select above*/
+    /*var entry = {
       qid: parseInt($(event.target).find('[name=qid]').val(),10),
-      district: $(event.target).find('[name=district]').val(),
-      village: $(event.target).find('[name=village]').val()
-    }
+    }*/
 
     Meteor.call('entry', entry, function(error, id) {
       if (error) {

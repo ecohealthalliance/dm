@@ -11,18 +11,18 @@
         <div class="controls">
             <!--move this handlebars control to helper -->
         	{{#if isTextArea}}
-            <textarea name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}"/>
+            <textarea name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}">{{answer questionTitle}}</textarea>
             {{else}}
                 {{#if isDrop}}
                     <select name="{{questionTitle}}">
                         <option value="">--</option>
                         {{#each arrayify questionDrop}}                            
-                            <option value="{{name}}">{{value}}</option>
+                            <option value="{{name}}" {{isSelected ../questionTitle name}}>{{value}}</option>
                         {{/each}}
                     </select>
                 
                 {{else}}
-                    <input name="{{questionTitle}}" type="text" value="" placeholder="{{questionHelper}}"/>
+                    <input name="{{questionTitle}}" type="text" value="{{answer questionTitle}}" placeholder="{{questionHelper}}"/>
                 {{/if}}
             {{/if}}
         </div>
