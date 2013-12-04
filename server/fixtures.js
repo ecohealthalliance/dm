@@ -126,6 +126,7 @@ if (Questions.find().count() === 0) {
     question: 'District name',
     questionHelper: 'Name of district',
     questionType: 'dropdown',
+    /* added values here to populate dropdown */
     questionDrop: '{"solola":"Solola", "peten":"Peten"}',
     userId: lizzie._id,
     author: lizzie.profile.name,
@@ -139,6 +140,7 @@ if (Questions.find().count() === 0) {
     question: 'Village name',
     questionHelper: 'Name of village',
     questionType: 'dropdown',
+    /* added values here to populate dropdown */
     questionDrop: '{"jucanya":"Jucanya", "quetzaltenango":"Quetzaltenango"}',
     userId: lizzie._id,
     author: lizzie.profile.name,
