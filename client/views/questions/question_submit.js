@@ -5,7 +5,7 @@ Template.questionSubmit.events({
       questionNumber: parseInt($(event.target).find('[name=questionNumber]').val(),10),
       questionTitle: $(event.target).find('[name=questionTitle]').val(),
       question: $(event.target).find('[name=question]').val(),
-      questionHelper: $(event.target).find('[name=question]').val(),
+      questionHelper: $(event.target).find('[name=questionHelper]').val(),
       questionType: $(event.target).find('[name=questionType]').val(),
       questionDrop: $(event.target).find('[name=questionDrop]').val()
     }
