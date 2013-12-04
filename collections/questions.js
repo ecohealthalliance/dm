@@ -8,7 +8,7 @@ Questions.allow({
 Entries.deny({
   update: function(userId, question, fieldNames) {
     // may only edit the following fields:
-    return (_.without(fieldNames, 'questionNumber', 'questionTitle', 'question', 'questionType', 'questionDrop').length > 0);
+    return (_.without(fieldNames, 'questionNumber', 'questionTitle', 'question', 'questionHelper', 'questionType', 'questionDrop').length > 0);
   }
 });
 
@@ -33,7 +33,7 @@ Meteor.methods({
     }
 
     // pick out the whitelisted keys
-    var question = _.extend(_.pick(questionAttributes, 'questionNumber', 'questionTitle', 'question', 'questionType', 'questionDrop'), {
+    var question = _.extend(_.pick(questionAttributes, 'questionNumber', 'questionTitle', 'question', 'questionHelper', 'questionType', 'questionDrop'), {
       userId: user._id, 
       author: user.username, 
       submitted: new Date().getTime(),
