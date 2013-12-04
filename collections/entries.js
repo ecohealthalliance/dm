@@ -10,7 +10,6 @@ Entries.deny({
     // may only edit the following three fields:
     var questionNames = Questions.find({},{questionTitle:1})
     return (_.without(fieldNames, _.values(questionNames)).length > 0);
-    /*return (_.without(fieldNames, 'qid', 'district', 'village').length > 0);*/
   }
 });
 

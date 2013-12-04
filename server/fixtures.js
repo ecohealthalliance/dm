@@ -30,8 +30,8 @@ if (Entries.find().count() === 0) {
 
   var surveyOneId = Entries.insert({
     qid: 123,
-    district: 'Rio',
-    village: 'Solola',
+    district: 'solola',
+    village: 'jucanya',
     date: '2013',
     nameint: 'bob',
     namesup: 'billy bob',
@@ -60,8 +60,8 @@ if (Entries.find().count() === 0) {
 
   Entries.insert({
     qid: 456,
-    district: 'Solola',
-    village: 'Rio',
+    district: 'solola',
+    village: 'jucanya',
     date: '2012',
     nameint: 'bob',
     namesup: 'billy bob',
@@ -74,8 +74,8 @@ if (Entries.find().count() === 0) {
 
   Entries.insert({
     qid: 789,
-    district: 'Riola',
-    village: 'Sio',
+    district: 'solola',
+    village: 'jucanya',
     date: '2013',
     nameint: 'bob',
     namesup: 'billy bob',
@@ -88,8 +88,8 @@ if (Entries.find().count() === 0) {
 
   Entries.insert({
     qid: 999,
-    district: 'Marlow',
-    village: 'Landia',
+    district: 'solola',
+    village: 'jucanya',
     date: '2013',
     nameint: 'bob',
     namesup: 'billy bob',
@@ -126,7 +126,6 @@ if (Questions.find().count() === 0) {
     question: 'District name',
     questionHelper: 'Name of district',
     questionType: 'dropdown',
-    /* added values here to populate dropdown */
     questionDrop: '{"solola":"Solola", "peten":"Peten"}',
     userId: lizzie._id,
     author: lizzie.profile.name,
@@ -140,7 +139,6 @@ if (Questions.find().count() === 0) {
     question: 'Village name',
     questionHelper: 'Name of village',
     questionType: 'dropdown',
-    /* added values here to populate dropdown */
     questionDrop: '{"jucanya":"Jucanya", "quetzaltenango":"Quetzaltenango"}',
     userId: lizzie._id,
     author: lizzie.profile.name,
