@@ -1,15 +1,34 @@
 <template name="entryPage">
   {{#with currentEntry}}
-    {{> entryItem}}
-    <ul class="comments">
-      {{#each comments}}
-        {{> comment}}
+  <div class="main">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          
+          <td><h2>Question</h2></td>
+          <td><h2>Answer</h2></td>
+        
+        </tr>
+      </thead>
+
+      <tbody>
+      {{#each questions}}
+         {{> entryView}}
       {{/each}}
-    </ul>
+      </tbody>
+      
+      <ul class="comments">
+        {{#each comments}}
+          {{> comment}}
+        {{/each}}
+      </ul>
+
     {{#if currentUser}}
       {{> commentSubmit}}
     {{else}}
       <p>Please log in to leave a comment.</p>
     {{/if}}
+    </table>  
+  </div>
   {{/with}}
 </template>

@@ -1,16 +1,32 @@
 <template name="entrySubmit">
   <form class="main">
+  
+  <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          
+          <th><h2>Question</h2></th>
+          <th><h2>Answer</h2></th>
+        
+        </tr>
+      </thead>
 
+    <tbody>  
     <!-- iterate through all questions from collection -->
   	{{#each questions}}
   		{{> entryqItem}}
   	{{/each}}
+    </tbody>
+
+  </table>
 
     <div class="control-group">
         <div class="controls">
             <input type="submit" value="Submit" class="btn btn-primary"/>
         </div>
     </div>
+
+
   </form>
 </template>
 
