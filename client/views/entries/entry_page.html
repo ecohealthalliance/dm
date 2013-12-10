@@ -16,7 +16,9 @@
          {{> entryView}}
       {{/each}}
       </tbody>
+      </table>
       
+      <h2>Comments</h2>
       <ul class="comments">
         {{#each comments}}
           {{> comment}}
@@ -28,7 +30,7 @@
     {{else}}
       <p>Please log in to leave a comment.</p>
     {{/if}}
-    </table>  
+      
   </div>
   {{/with}}
 </template>
