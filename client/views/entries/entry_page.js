@@ -1,5 +1,5 @@
 Template.entryPage.helpers({
-  currententry: function() {
+  currentEntry: function() {
     return Entries.findOne(Session.get('currentEntryId'));
   },
   /*todo: combine questions and values from entry*/
@@ -11,5 +11,5 @@ Template.entryPage.helpers({
   },
   comments: function() {
     return Comments.find({entryId: this._id});
-  },
+  }
 });
