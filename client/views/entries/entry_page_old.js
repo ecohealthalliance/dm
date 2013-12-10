@@ -1,4 +1,4 @@
-Template.entryPage.helpers({
+Template.entryPageOld.helpers({
   currentEntry: function() {
     return Entries.findOne(Session.get('currentEntryId'));
   },
