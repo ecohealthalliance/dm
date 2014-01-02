@@ -1,8 +1,11 @@
 <template name="entryView">
+	{{#each questions}}
 
-    <tr>
-      <td><strong> [{{questionNumber}}] </strong> {{question}} </td>
-      <td> {{answer questionTitle}} </td>
-    </tr>
+	    <tr>
+	      <td><strong> [{{questionNumber}}] </strong> {{question}} </td>
+		  <td> {{answer questionTitle ../_id}} </td>
+	    </tr>
+
+    {{/each}}
 
 </template>

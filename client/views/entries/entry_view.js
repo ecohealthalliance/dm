@@ -9,9 +9,9 @@ Template.entryView.helpers({
   isDrop: function() {
     return this.questionType == 'dropdown';
   },
-  answer: function(questionTitle) {
-    if (Entries.findOne(this._id)) {
-    return Entries.findOne(this._id)[questionTitle]
+  answer: function(questionTitle, entryId) {
+    if (Entries.findOne(entryId)) {
+    return Entries.findOne(entryId)[questionTitle]
     }
     else {return ""}
   },
@@ -22,5 +22,8 @@ Template.entryView.helpers({
       }
     }
     return "";
-  }
+  },
+  questions: function() {
+    return Questions.find();
+  },
 });
