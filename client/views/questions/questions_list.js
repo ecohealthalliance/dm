@@ -1,31 +1,14 @@
-Template.newQuestions.helpers({
-  options: function() {
-    return {
-      sort: {submitted: -1},
-      handle: newQuestionsHandle
-    }
-  }
-});
-
 Template.questionsList.helpers({
-  questions: function() {
-    return Questions.find({}, {limit: this.handle.limit()});
+  questionsWithRank: function() {
+    this.questions.rewind();
+    return this.questions.map(function(question, index, cursor) {
+      question._rank = index;
+      return question;
+    });
   },
-
-  questionsReady: function() {
-    return this.handle.ready();
-  },
-
-  allQuestionsLoaded: function() {
-    return this.handle.ready() &&  
-      Questions.find().count() < this.handle.loaded();
+  hasMoreQuestions: function(){
+    this.questions.rewind();
+    return Router.current().limit() == this.questions.fetch().length;
   }
 
-});
-
-Template.questionsList.events({
-  'click .load-more': function(e) {
-    e.preventDefault();
-    this.handle.loadNextPage();
-  }
 });

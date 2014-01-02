@@ -1,6 +1,6 @@
 Template.questionEdit.helpers({
   question: function() {
-    return Questions.findOne(Session.get('currentQuestionId'));
+    return Questions.findOne(this._id);
   }
 });
 
@@ -8,7 +8,7 @@ Template.questionEdit.events({
   'submit form': function(event) {
     event.preventDefault();
 
-    var currentQuestionId = Session.get('currentQuestionId');
+    var currentQuestionId = this._id;
 
     var questionProperties = {
       questionNumber: parseInt($(event.target).find('[name=questionNumber]').val(),10),
@@ -22,9 +22,9 @@ Template.questionEdit.events({
     Questions.update(currentQuestionId, {$set: questionProperties}, function(error) {
       if (error) {
         // display the error to the user
-        Errors.throw(error.reason);
+        throwError(error.reason);
       } else {
-        Meteor.Router.to('questionPage', currentQuestionId);
+        Router.go('questionPage', {_id: currentQuestionId});
       }
     });
   },
@@ -33,15 +33,9 @@ Template.questionEdit.events({
     event.preventDefault();
 
     if (confirm("Delete this entry?")) {
-      var currentQuestionId = Session.get('currentQuestionId');
+      var currentQuestionId = this._id;
       Questions.remove(currentQuestionId);
-      Meteor.Router.to('questionsList');
-    }
+      Router.go('questionsList');
   }
-});
-
-Template.questionSubmit.helpers({
-  questions: function() {
-    return Questions.find();
   }
 });

@@ -1,18 +1,14 @@
-<template name="newQuestions">
-  {{> questionsList options}}
-</template>
-
 <template name="questionsList">
   <div class="entries">
-    {{#each questions}}
+    <!--loop through questions in collection-->
+    {{#each questionsWithRank}}
       {{> questionItem}}
     {{/each}}
-    {{#if questionsReady}}
-      {{#unless allQuestionsLoaded}}
-        <a class="load-more" href="#">Load more</a>
-      {{/unless}}
-    {{else}}
-      <div>{{> spinner}}</div>
+
+    <!--load more questions-->
+    {{#if hasMoreQuestions}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
     {{/if}}
+
   </div>
 </template>

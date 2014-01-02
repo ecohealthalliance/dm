@@ -1,19 +1,19 @@
 <template name="questionItem">
   <div class="entry">
     <div class="entry-content">
-      <h3><a href="{{questionPagePath this}}">Q{{questionNumber}}</a><span>{{questionTitle}}</span></h3>
+      <h3><a href="{{pathFor 'questionPage'}}">Q{{questionNumber}}</a><span>{{questionTitle}}</span></h3>
       <p>
         Type: {{questionType}},
         Question: {{question}},
-        Submitted by {{author}},
+        Submitted by {{author}}
         <!--<a href="{{questionPagePath this}}">{{pluralize commentsCount "comment"}}</a>-->
       </p>
     </div>
     
-    <a href="{{questionPagePath this}}" class="discuss btn">Review</a>
+    <a href="{{pathFor 'questionPage'}}" class="discuss btn">Review</a>
     
     {{#if ownQuestion}}
-      <a href="{{questionEditPath this}}" class="discuss btn">Edit</a>
+      <a href="{{pathFor 'questionEdit'}}" class="discuss btn">Edit</a>
     {{/if}}
 
   </div>

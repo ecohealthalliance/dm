@@ -12,13 +12,19 @@ Template.questionSubmit.events({
     Meteor.call('question', question, function(error, id) {
       if (error) {
         // display the error to the user
-        Errors.throw(error.reason);
-        // if the error is that the question already exists, take us there
+        throwError(error.reason);
+        
         if (error.error === 302)
-          Meteor.Router.to('questionPage', error.details)
+          Router.go('questionPage', {_id: error.details})
       } else {
-        Meteor.Router.to('questionPage', id);
+        Router.go('questionPage', {_id: id});
       }
     });
+  }
+});
+
+Template.questionSubmit.helpers({
+  questions: function() {
+    return Questions.find();
   }
 });

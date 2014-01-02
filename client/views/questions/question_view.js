@@ -10,14 +10,14 @@ Template.questionView.helpers({
     return this.questionType == 'dropdown';
   },
   answer: function(questionTitle) {
-    if (Entries.findOne(Session.get('currentEntryId'))) {
-    return Entries.findOne(Session.get('currentEntryId'))[questionTitle]
+    if (Entries.findOne(this._id)) {
+    return Entries.findOne(this._id)[questionTitle]
     }
     else {return ""}
   },
   isSelected: function(questionTitle, value) {
-    if (Entries.findOne(Session.get('currentEntryId'))) {
-      if (Entries.findOne(Session.get('currentEntryId'))[questionTitle] === value) {
+    if (Entries.findOne(this._id)) {
+      if (Entries.findOne(this._id)[questionTitle] === value) {
         return "selected";
       }
     }
