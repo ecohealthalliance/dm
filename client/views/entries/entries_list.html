@@ -1,21 +1,13 @@
-<template name="newEntries">
-  {{> entriesList options}}
-</template>
-
 <template name="entriesList">
   <div class="entries">
     <!--loop through entries in collection-->
-    {{#each entries}}
+    {{#each entriesWithRank}}
       {{> entryItem}}
     {{/each}}
 
-    <!--spin until entries load-->
-    {{#if entriesReady}}
-      {{#unless allEntriesLoaded}}
-        <a class="load-more" href="#">Load more</a>
-      {{/unless}}
-    {{else}}
-      <div>{{> spinner}}</div>
+    <!--load more entries-->
+    {{#if hasMoreEntries}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
     {{/if}}
 
   </div>

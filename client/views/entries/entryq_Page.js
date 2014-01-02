@@ -1,6 +1,6 @@
 Template.entryqPage.helpers({
   currentEntry: function() {
-    return Entries.findOne(Session.get('currentEntryId'));
+    return Entries.findOne(this._id);
   },
   comments: function() {
     return Comments.find({entryId: this._id});

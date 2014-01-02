@@ -1,31 +1,31 @@
 <template name="header">
   <header class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="/">gDataMator (gDM)</a>
+      <a class="brand" href="{{pathFor 'homePage'}}">gDataMator (gDM)</a>
       <ul class="nav">
 
         <li class="{{activeRouteClass 'newEntries'}}">
-          <a href="/entries">Entries</a>
+          <a href="{{pathFor 'newEntries'}}">Entries</a>
         </li>
 
         {{#if currentUser}}
           <li class="{{activeRouteClass 'entrySubmit'}}">
-            <a href="/submit">Submit Entry</a>
+            <a href="{{pathFor 'entrySubmit'}}">Submit Entry</a>
           </li>
         {{/if}}
         
         <li class="{{activeRouteClass 'newQuestions'}}">
-          <a href="/questions">Questions</a>
+          <a href="{{pathFor 'newQuestions'}}">Questions</a>
         </li>
 
         {{#if currentUser}}
           <li class="{{activeRouteClass 'questionSubmit'}}">
-            <a href="/submitq">Submit Question</a>
+            <a href="{{pathFor 'questionSubmit'}}">Submit Question</a>
           </li>
         {{/if}}
 
         <li class="{{activeRouteClass 'aboutPage'}}">
-          <a href="/about">About</a>
+          <a href="{{pathFor 'aboutPage'}}">About</a>
         </li>
 
         <li class="dropdown">

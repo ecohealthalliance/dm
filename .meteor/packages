@@ -6,7 +6,6 @@
 standard-app-packages
 preserve-inputs
 bootstrap
-router
 accounts-ui-bootstrap-dropdown
 accounts-password
 spin
@@ -15,3 +14,5 @@ paginated-subscription
 x-editable-bootstrap
 coffeescript
 accounts-google
+datamate
+iron-router

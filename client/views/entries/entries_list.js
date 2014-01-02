@@ -1,31 +1,13 @@
-Template.newEntries.helpers({
-  options: function() {
-    return {
-      sort: {submitted: -1},
-      handle: newEntriesHandle
-    }
-  }
-});
-
 Template.entriesList.helpers({
-  entries: function() {
-    return Entries.find({}, {sort: this.sort, limit: this.handle.limit()});
+  entriesWithRank: function() {
+    this.entries.rewind();
+    return this.entries.map(function(entry, index, cursor) {
+      entry._rank = index;
+      return entry;
+    });
   },
-
-  entriesReady: function() {
-    return this.handle.ready();
-  },
-
-  allEntriesLoaded: function() {
-    return this.handle.ready() &&  
-      Entries.find().count() < this.handle.loaded();
-  }
-
-});
-
-Template.entriesList.events({
-  'click .load-more': function(e) {
-    e.preventDefault();
-    this.handle.loadNextPage();
+  hasMoreEntries: function(){
+    this.entries.rewind();
+    return Router.current().limit() == this.entries.fetch().length;
   }
 });

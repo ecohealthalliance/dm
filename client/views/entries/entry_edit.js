@@ -1,13 +1,13 @@
 Template.entryEdit.helpers({
   entry: function() {
-    return Entries.findOne(Session.get('currentEntryId'));
+    return Entries.findOne(this._id);
   },
   /*todo: combine questions and values from entry*/
   questions: function() {
     return Questions.find();
   },
   answer: function(questionTitle) {
-    return Entries.findOne(Session.get('currentEntryId'))[questionTitle]
+    return Entries.findOne(this._id)[questionTitle]
   }
 });
 
@@ -15,7 +15,7 @@ Template.entryEdit.events({
   'submit form': function(event) {
     event.preventDefault();
 
-    var currentEntryId = Session.get('currentEntryId');
+    var currentEntryId = this._id;
 
     var entryProperties = {
       qid: parseInt($(event.target).find('[name=qid]').val(),10),
@@ -26,9 +26,9 @@ Template.entryEdit.events({
     Entries.update(currentEntryId, {$set: entryProperties}, function(error) {
       if (error) {
         // display the error to the user
-        Errors.throw(error.reason);
+        throwError(error.reason);
       } else {
-        Meteor.Router.to('entryPage', currentEntryId);
+        Router.go('entryPage', {_id: currentEntryId});
       }
     });
   },
@@ -37,9 +37,9 @@ Template.entryEdit.events({
     event.preventDefault();
 
     if (confirm("Delete this entry?")) {
-      var currentEntryId = Session.get('currentEntryId');
+      var currentEntryId = this._id;
       Entries.remove(currentEntryId);
-      Meteor.Router.to('entriesList');
+      Router.go('entriesList');
     }
   }
 });

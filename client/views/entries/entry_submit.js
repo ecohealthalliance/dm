@@ -20,12 +20,12 @@ Template.entrySubmit.events({
     Meteor.call('entry', entry, function(error, id) {
       if (error) {
         // display the error to the user
-        Errors.throw(error.reason);
+        throwError(error.reason);
         // if the error is that the entry already exists, take us there
         if (error.error === 302)
-          Meteor.Router.to('entryPage', error.details)
+          Router.go('entryPage', {_id: error.details})
       } else {
-        Meteor.Router.to('entryPage', id);
+        Router.go('entryPage', {_id: id});
       }
     });
   }

@@ -1,23 +1,21 @@
 <template name="entryPage">
   {{#with currentEntry}}
-  <div class="main">
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          
-          <td><h2>Question</h2></td>
-          <td><h2>Answer</h2></td>
-        
-        </tr>
-      </thead>
+    <div class="main">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <td><h2>Question</h2></td>
+            <td><h2>Answer</h2></td>
+          </tr>
+        </thead>
 
-      <tbody>
-      {{#each questions}}
-         {{> entryView}}
-      {{/each}}
-      </tbody>
+        <tbody>
+          {{#each questions}}
+             {{> entryView}}
+          {{/each}}
+        </tbody>
       </table>
-      
+        
       <h2>Comments</h2>
       <ul class="comments">
         {{#each comments}}
@@ -25,12 +23,12 @@
         {{/each}}
       </ul>
 
-    {{#if currentUser}}
-      {{> commentSubmit}}
-    {{else}}
-      <p>Please log in to leave a comment.</p>
-    {{/if}}
-      
-  </div>
+      {{#if currentUser}}
+        {{> commentSubmit}}
+      {{else}}
+        <p>Please log in to leave a comment.</p>
+      {{/if}}
+
+    </div>
   {{/with}}
 </template>

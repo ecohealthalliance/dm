@@ -1,9 +1,12 @@
 {
   "packages": {
-    "router": {},
+    "iron-router": {},
     "accounts-ui-bootstrap-dropdown": {},
     "spin": {},
     "paginated-subscription": {},
-    "x-editable-bootstrap": {}
+    "x-editable-bootstrap": {},
+    "datamate": {
+      "path": "packages/datamate"
+    }
   }
 }

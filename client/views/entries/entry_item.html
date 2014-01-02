@@ -1,18 +1,18 @@
 <template name="entryItem">
   <div class="entry">
     <div class="entry-content">
-      <h3><a href="{{entryPagePath this}}">QID: {{qid}}</a><span>District: {{district}}</span></h3>
+      <h3><a href="{{pathFor 'entryPage'}}">QID: {{qid}}</a><span>District: {{district}}</span></h3>
       <p>
         Village: {{village}},
         Submitted by {{author}},
-        <a href="{{entryPagePath this}}">{{pluralize commentsCount "comment"}}</a>
+        <a href="{{pathFor 'entryPage'}}">{{pluralize commentsCount "comment"}}</a>
       </p>
     </div>
     
-    <a href="{{entryPagePath this}}" class="discuss btn">Review</a>
+    <a href="{{pathFor 'entryPage'}}" class="discuss btn">Review</a>
     
     {{#if ownEntry}}
-      <a href="{{entryEditPath this}}" class="discuss btn">Edit</a>
+      <a href="{{pathFor 'entryEdit'}}" class="discuss btn">Edit</a>
     {{/if}}
     
   </div>

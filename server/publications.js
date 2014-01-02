@@ -1,17 +1,17 @@
-Meteor.publish('entries', function(limit) {
-  return Entries.find({}, {sort: {qid: -1}, limit: limit});
-});
-
-Meteor.publish('topEntries', function(limit) {
-  return Entries.find({}, {sort: {votes: -1, submitted: -1}, limit: limit});
-});
-
-Meteor.publish('newEntries', function(limit) {
-  return Entries.find({}, {sort: {submitted: -1}, limit: limit});
+Meteor.publish('entries', function(options) {
+  return Entries.find({}, options);
 });
 
 Meteor.publish('singleEntry', function(id) {
   return id && Entries.find(id);
+});
+
+Meteor.publish('questions', function(options) {
+  return Questions.find({}, options);
+});
+
+Meteor.publish('singleQuestion', function(id) {
+  return id && Questions.find(id);
 });
 
 Meteor.publish('comments', function(entryId) {
@@ -20,12 +20,4 @@ Meteor.publish('comments', function(entryId) {
 
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId});
-});
-
-Meteor.publish('questions', function(limit) {
-  return Questions.find({}, {sort: {questionNumber: 1}, limit: limit});
-});
-
-Meteor.publish('newQuestions', function(limit) {
-  return Questions.find({}, {sort: {questionNumber: 1}, limit: limit});
 });

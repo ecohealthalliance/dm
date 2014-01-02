@@ -4,7 +4,7 @@ Template.header.helpers({
     args.pop();
     
     var active = _.any(args, function(name) {
-      return location.pathname === Meteor.Router[name + 'Path']();
+      return Router.current().route.name === name
     });
     
     return active && 'active';
