@@ -1,3 +1,10 @@
 {
-	"name":"datamate"
+	"name":"datamate",
+	"description": "An app to create questions and answers for Meteor data entry",
+	"homepage": "https://github.com/ecohealthalliance/datamate",
+	"author": "Nico Preston <nicopresto@gmail.com>",
+	"version": "0.1.0",
+	"git": "https://github.com/ecohealthalliance/datamate.git",
+	"packages": {
+}
 }
