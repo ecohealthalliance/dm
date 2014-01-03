@@ -5,6 +5,8 @@ Package.describe({
 Package.on_use(function (api) {
 	api.use(['templating'], 'client');
 	api.add_files(["lib/test.html","lib/test.js"], "client");
+
+	// question files
 	api.add_files([
 		"lib/questions/question_dropdowns.html", 
 		"lib/questions/question_edit.html",
@@ -24,6 +26,7 @@ Package.on_use(function (api) {
 		"lib/questions/questions_list.js"
 	], "client");
 
+	// comment files
 	api.add_files([
 		"lib/comments/comment.html",
 		"lib/comments/comment.js",
@@ -31,6 +34,7 @@ Package.on_use(function (api) {
 		"lib/comments/comment_submit.js"
 	], "client");
 
+	// entries files
 	api.add_files([
 		"lib/entries/entries_list.html",
 		"lib/entries/entries_list.js",
@@ -53,9 +57,19 @@ Package.on_use(function (api) {
 		"lib/entries/entryq_page.js"
 	], "client");
 
+	// notifictions files
 	api.add_files([
 		"lib/notifications/notifications.html",
 		"lib/notifications/notifications.js"
 	], "client");
 
+	// collections files
+	/*
+	api.add_files([
+		"collections/comments.js",
+		"collections/entries.js",
+		"collections/notifications.js",
+		"collections/questions.js"
+	], "client");
+	*/
 });
